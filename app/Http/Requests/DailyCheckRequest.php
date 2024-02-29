@@ -23,7 +23,7 @@ class DailyCheckRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'status' => ['required', 'boolean'],
+            'status' => ['required', 'integer'],
         ];
     }
 }

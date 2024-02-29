@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Models\DailyCheck;
 use App\Http\Resources\DailyCheckResource;
@@ -38,11 +38,11 @@ class DailyCheckController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(DailyCheckRequest $request, DailyCheck $dailyItem)
+    public function update(DailyCheckRequest $request, DailyCheck $dailyCheck)
     {
-        $dailyItem->update($request->validated());
-
-        return new DailyCheckResource($dailyItem);
+        $dailyCheck->update($request->validated());
+        Log::info($dailyCheck->status);
+        return new DailyCheckResource($dailyCheck);
     }
 
     /**

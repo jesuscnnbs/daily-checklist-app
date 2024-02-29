@@ -17,7 +17,7 @@ export default function useDailyChecks() {
     errors.value=''
     try {
       await axios.post('/api/daily-check', data)
-      await router.push({name: 'daily.checks'})  
+      await router.push({name: 'daily.checks'})
     } catch (e) {
       if(e.response?.status === 422) {
         for (const key in e.response.data.errors) {
@@ -29,7 +29,6 @@ export default function useDailyChecks() {
 
   const updateDailyCheck = async (check) => {
     errors.value = ''
-    console.log(check)
     try {
       await axios.patch(`/api/daily-check/${check.id}`, check)
       await router.push({name: 'daily.checks'})

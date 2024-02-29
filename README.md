@@ -20,6 +20,8 @@ php artisan make:controller Api/DailyCheckController --resource --api --model=Da
 php artisan make:resource DailyCheckResource
 ```
 
+## Run schedule cron job
 ```bash
-php artisan make:request DailyCheckRequest
+php artisan schedule:run
 ```
+

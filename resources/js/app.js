@@ -1,6 +1,7 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
 import { createApp } from 'vue'; 
+import 'tailwindcss/tailwind.css';
 import router from './router'
  
 
