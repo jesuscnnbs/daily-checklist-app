@@ -38,11 +38,11 @@ class DailyCheckController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(DailyCheckRequest $request, DailyCheck $dailyCheck)
+    public function update(DailyCheckRequest $request, DailyCheck $dailyItem)
     {
         $dailyItem->update($request->validated());
 
-        return new DailyCheckResource($dailyCheck);
+        return new DailyCheckResource($dailyItem);
     }
 
     /**
@@ -52,6 +52,6 @@ class DailyCheckController extends Controller
     {
         $dailyCheck->delete();
 
-        return reponse()->noContent();
+        return response()->noContent();
     }
 }

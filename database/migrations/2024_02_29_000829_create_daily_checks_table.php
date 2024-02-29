@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('daily_checks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->boolean('status');
+            $table->integer('status');
             $table->timestamps();
         });
     }
